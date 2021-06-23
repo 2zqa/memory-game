@@ -1,9 +1,21 @@
 div {
   display: inline-block;
-  background: linear-gradient(180deg, transparent 0%, grey 100%);
   width: 4em;
   line-height: 4em;
   text-align: center;
   font-size: large;
   cursor: pointer;
+}
+
+div.inactive {
+  background-color: red;
+}
+
+div.active {
+  background-color: green;
+}
+
+div.found {
+  background-color: purple;
+  cursor: default;
 }
