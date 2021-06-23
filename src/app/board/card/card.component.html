@@ -1,0 +1,2 @@
+<ng-container *ngIf="card.status !== 'inactive'; else elseBlock">{{card.letter}}</ng-container>
+<ng-template #elseBlock>{{inactiveCardChar}}</ng-template>

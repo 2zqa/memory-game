@@ -1,0 +1,7 @@
+<table>
+  <tr *ngFor="let row of board.cards">
+    <td *ngFor="let card of row">
+      <app-card [cardValue]="card.letter" (click)="board.openCard(card)"></app-card>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,6 @@
+:host {
+  display: inline-block;
+  background: linear-gradient(180deg, transparent 0%, grey 100%);
+  padding: 2em;
+  font-size: large;
+}
