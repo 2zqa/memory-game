@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Board} from "../board";
+import {BoardService} from "../board.service";
 
 @Component({
   selector: 'app-board',
@@ -7,6 +8,10 @@ import {Board} from "../board";
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent {
-  board = new Board(3);
+
+  constructor(private boardSerivce: BoardService) {
+  }
+
+  board = new Board(4);
 
 }

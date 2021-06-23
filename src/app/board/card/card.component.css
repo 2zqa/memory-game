@@ -1,6 +1,9 @@
-:host {
+div {
   display: inline-block;
   background: linear-gradient(180deg, transparent 0%, grey 100%);
-  padding: 2em;
+  width: 4em;
+  line-height: 4em;
+  text-align: center;
   font-size: large;
+  cursor: pointer;
 }
