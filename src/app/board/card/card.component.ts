@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Card} from "../../game/card";
+import {Card} from "../card";
 import {BoardService} from "../board.service";
-import { CardStatus } from "../../game/card";
+import { CardStatus } from "../card";
 
 @Component({
   selector: 'app-card',

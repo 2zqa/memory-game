@@ -1,4 +1,4 @@
-import {Card} from '../game/card';
+import {Card} from './card';
 
 export class Board {
   public cards: Card[][] = [];

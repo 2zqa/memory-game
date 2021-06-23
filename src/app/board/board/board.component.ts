@@ -9,7 +9,7 @@ import {BoardService} from "../board.service";
 })
 export class BoardComponent {
 
-  constructor(private boardSerivce: BoardService) {
+  constructor(private boardService: BoardService) {
   }
 
   board = new Board(4);
