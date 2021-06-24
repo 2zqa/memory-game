@@ -5,6 +5,7 @@ div {
   text-align: center;
   font-size: large;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 div.inactive {

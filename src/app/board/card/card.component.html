@@ -1,4 +1,5 @@
-<div *ngIf="card" [className]="card.status" (click)="cardClicked()">
-  <ng-container *ngIf="card.status !== CardStatus.inactive; else elseBlock">{{card.letter}}</ng-container>
-  <ng-template #elseBlock>{{inactiveCardChar}}</ng-template>
-</div>
+
+  <div *ngIf="card" [className]="card.status" (click)="cardClicked()">
+    <ng-container *ngIf="card.status !== CardStatus.inactive; else elseBlock">{{card.letter}}</ng-container>
+    <ng-template #elseBlock>{{inactiveCardChar}}</ng-template>
+  </div>
