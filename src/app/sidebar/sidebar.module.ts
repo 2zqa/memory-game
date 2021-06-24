@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HighscoresComponent } from './highscores/highscores.component';
 import { SidebarComponent } from './sidebar.component';
 import { GameSettingsComponent } from './game-settings/game-settings.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -15,8 +16,9 @@ import { GameSettingsComponent } from './game-settings/game-settings.component';
   exports: [
     SidebarComponent
   ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 export class SidebarModule { }

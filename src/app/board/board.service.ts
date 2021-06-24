@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {Card, CardStatus} from "./card";
+import {CardColor} from "../sidebar/game-settings/cardColor";
 
 @Injectable({
   providedIn: 'root'
@@ -12,17 +13,18 @@ export class BoardService {
   private charSrc = new BehaviorSubject<string>('*');
   char = this.charSrc.asObservable();
 
-  private boardsizeSrc = new BehaviorSubject<number>(2);
-  boardsize = this.boardsizeSrc.asObservable();
+  boardsize = 2;
+
+  ctrlColors: CardColor[] = [
+    { control: CardStatus.inactive, color: "#FF0000" },
+    { control: CardStatus.active, color: "#008C00" },
+    { control: CardStatus.found, color: "#800080" },
+  ];
 
   constructor() { }
 
-  updatedChar(char: string){
+  updateChar(char: string){
     this.charSrc.next(char);
-  }
-
-  updatedBoardsize(value: number) {
-    this.boardsizeSrc.next(value);
   }
 
   addOpenCard(card: Card): void {
