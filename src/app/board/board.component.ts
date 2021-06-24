@@ -9,9 +9,9 @@ import {BoardService} from "./board.service";
 })
 export class BoardComponent {
 
+  board: Board | undefined;
+
   constructor(private boardService: BoardService) {
+    this.boardService.board.subscribe(value => this.board = value);
   }
-
-  board = new Board(4);
-
 }

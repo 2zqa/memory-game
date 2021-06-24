@@ -1,4 +1,4 @@
-<table>
+<table *ngIf="board">
   <tr *ngFor="let row of board.cards">
     <td *ngFor="let card of row">
       <app-card [card]="card"></app-card>

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BoardService} from "../../board/board.service";
 import {NgForm} from "@angular/forms";
-import {CardStatus} from "../../board/card";
-import {CardColor} from "./cardColor";
 
 @Component({
   selector: 'app-game-settings',
@@ -23,7 +21,6 @@ export class GameSettingsComponent {
   }
 
   startNewGame(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+    this.boardService.setNewBoard(f.value.size);
   }
 }
