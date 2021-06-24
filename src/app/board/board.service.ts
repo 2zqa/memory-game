@@ -12,10 +12,17 @@ export class BoardService {
   private charSrc = new BehaviorSubject<string>('*');
   char = this.charSrc.asObservable();
 
+  private boardsizeSrc = new BehaviorSubject<number>(2);
+  boardsize = this.boardsizeSrc.asObservable();
+
   constructor() { }
 
   updatedChar(char: string){
     this.charSrc.next(char);
+  }
+
+  updatedBoardsize(value: number) {
+    this.boardsizeSrc.next(value);
   }
 
   addOpenCard(card: Card): void {

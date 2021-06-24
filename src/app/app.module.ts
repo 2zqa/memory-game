@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {BoardModule} from "./board/board.module";
+import {SidebarModule} from "./sidebar/sidebar.module";
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import {BoardModule} from "./board/board.module";
   ],
     imports: [
         BrowserModule,
-        BoardModule
+        BoardModule,
+        SidebarModule
     ],
   providers: [],
   bootstrap: [AppComponent]

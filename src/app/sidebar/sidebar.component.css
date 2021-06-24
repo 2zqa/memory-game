@@ -1,0 +1,10 @@
+table {
+  width: 25vw;
+  height: 70vh;
+}
+
+table td {
+  vertical-align: top;
+  text-align: left;
+  padding: 1%;
+}

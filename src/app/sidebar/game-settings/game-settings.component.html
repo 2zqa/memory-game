@@ -1,0 +1,9 @@
+<b>Karakter op kaarten:</b>
+<select name="character" #charSelect (change)='setChar(charSelect.value)'>
+  <option *ngFor="let char of chars" [value]="char">{{char}}</option>
+</select>
+<br>
+<b>Afmeting bord:</b>
+<select name="size" #sizeSelect (change)='setBoardSize(sizeSelect.value)'>
+  <option *ngFor="let size of sizes" [value]="size">{{size}}</option>
+</select>
