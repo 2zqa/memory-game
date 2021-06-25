@@ -2,33 +2,21 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Card} from "../card";
 import {BoardService} from "../board.service";
 import { CardStatus } from "../card";
+import {CardColorService} from "../../card-color.service";
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   public CardStatus = CardStatus;
-  @Input() card: Card | undefined;
+  @Input() card!: Card;
   inactiveCardChar: string = '';
+  ctrlColors =  this.colorService.ctrlColors;
 
-  constructor(private boardService: BoardService) {}
-
-  ngOnInit() {
-    if(!(this.card instanceof Card)) {
-      alert("Sorry, the game is broken. Please report this to the developers");
-      console.error("Error: card is undefined, this shouldn't have happened. Type in reality: "+ typeof this.card);
-    }
+  constructor(private boardService: BoardService, private colorService: CardColorService) {
     this.boardService.char.subscribe(char => this.inactiveCardChar = char);
-  }
-
-  cardClicked() {
-    if(!(this.card instanceof Card)) {
-      return; // This should never happen, but just to make the compiler happy
-    }
-    // TODO: timing service
-    this.boardService.addOpenCard(this.card);
   }
 
 }
