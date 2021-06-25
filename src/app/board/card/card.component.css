@@ -8,15 +8,6 @@ div {
   border-radius: 3px;
 }
 
-div.inactive {
-  background-color: red;
-}
-
-div.active {
-  background-color: green;
-}
-
 div.found {
-  background-color: purple;
   cursor: default;
 }

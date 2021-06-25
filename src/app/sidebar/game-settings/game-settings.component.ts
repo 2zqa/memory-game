@@ -15,7 +15,7 @@ export class GameSettingsComponent {
   defaultSize = this.sizes[1];
   ctrlColors = this.colorService.ctrlColors;
 
-  constructor(private boardService: BoardService, private colorService: CardColorService) { }
+  constructor(private boardService: BoardService, public colorService: CardColorService) { }
 
   setChar(value: string): void {
     this.boardService.updateChar(value);

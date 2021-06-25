@@ -5,13 +5,15 @@
 
 <br>
 
-<div *ngIf="ctrlColors !== undefined">
+<ng-container *ngIf="ctrlColors">
   <b>Kaartkleuren</b>
   <br>
-  <ng-container *ngFor="let ctrl of ctrlColors; index as i">
-    <input type="color" [(ngModel)]="ctrl.color" name="color_{{i}}"/><p>{{ctrl.color}}</p>
-  </ng-container>
-</div>
+  <div *ngFor="let ctrl of ctrlColors; index as i">
+    <p>{{ctrl.control}}:</p>
+    <input type="color" [(ngModel)]="ctrl.color" (change)="colorService.changeColor(ctrl.control, ctrl.color)" name="color_{{i}}"/>
+    <p>({{ctrl.color}})</p>
+  </div>
+</ng-container>
 
 <br><br>
 

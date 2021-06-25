@@ -1,4 +1,10 @@
-<div *ngIf="card" [className]="card.status">
-  <ng-container *ngIf="card.status !== CardStatus.inactive; else elseBlock">{{card.letter}}</ng-container>
-  <ng-template #elseBlock>{{inactiveCardChar}}</ng-template>
-</div>
+<!--<div *ngIf="card" [className]="card.status" [attr.style.backgroundColor]="colors[card.status]">-->
+<!--  <ng-container *ngIf="card.status !== CardStatus.inactive; else elseBlock">{{card.letter}}</ng-container>-->
+<!--  <ng-template #elseBlock>{{inactiveCardChar}}</ng-template>-->
+<!--</div>-->
+
+<ng-container [ngSwitch]="card.status">
+  <div *ngSwitchCase="CardStatus.active" [style.backgroundColor]="activeColor" class="active">{{card.letter}}</div>
+  <div *ngSwitchCase="CardStatus.inactive" [style.backgroundColor]="inactiveColor" class="inactive">{{inactiveCardChar}}</div>
+  <div *ngSwitchCase="CardStatus.found" [style.backgroundColor]="foundColor" class="found">{{card.letter}}</div>
+</ng-container>
