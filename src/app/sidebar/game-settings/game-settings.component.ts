@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {BoardService} from "../../board/board.service";
 import {NgForm} from "@angular/forms";
 import {CardColorService} from "../../card-color.service";
@@ -22,6 +22,6 @@ export class GameSettingsComponent {
   }
 
   startNewGame(f: NgForm) {
-    this.boardService.setNewBoard(f.value.size);
+    this.boardService.newGame(f.value.size);
   }
 }

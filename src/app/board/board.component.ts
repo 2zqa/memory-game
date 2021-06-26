@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Board} from "./board";
 import {BoardService} from "./board.service";
+import {Card, CardStatus} from "./card";
+import {TimingService} from "../timing.service";
 
 @Component({
   selector: 'app-board',
@@ -9,9 +11,10 @@ import {BoardService} from "./board.service";
 })
 export class BoardComponent {
 
-  board: Board | undefined;
+  cards: Card[][] | undefined;
 
-  constructor(private boardService: BoardService) {
-    this.boardService.board.subscribe(value => this.board = value);
+  constructor(public boardService: BoardService, private timingService: TimingService) {
+    this.boardService.cards.subscribe(cards=>this.cards=cards);
+    boardService.newGame(4);
   }
 }

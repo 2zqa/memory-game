@@ -1,7 +1,7 @@
-<table *ngIf="board">
-  <tr *ngFor="let row of board.cards">
+<table *ngIf="cards">
+  <tr *ngFor="let row of cards">
     <td *ngFor="let card of row">
-      <app-card [card]="card" (click)="board.cardClicked(card)"></app-card>
+      <app-card [card]="card" (click)="boardService.cardClicked(card)"></app-card>
     </td>
   </tr>
 </table>
