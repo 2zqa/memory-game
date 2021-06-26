@@ -7,7 +7,7 @@ import {BoardService} from "./board/board.service";
 })
 export class TimingService {
 
-  readonly PEEK_SECONDS = 5;
+  readonly PEEK_SECONDS = 10;
 
   private progressSrc = new BehaviorSubject<number>(this.PEEK_SECONDS);
   progress = this.progressSrc.asObservable();
