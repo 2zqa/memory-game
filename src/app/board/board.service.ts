@@ -16,6 +16,8 @@ export class BoardService {
   char = this.charSrc.asObservable();
   private cardsSrc = new BehaviorSubject<Card[][]>([]);
   cards = this.cardsSrc.asObservable();
+  private foundCardPairsSrc = new BehaviorSubject<number>(0);
+  foundCardPairs = this.foundCardPairsSrc.asObservable();
 
   constructor(private timingService: TimingService) {
   }
@@ -25,6 +27,7 @@ export class BoardService {
   }
 
   newGame(size: number) {
+    this.timingService.reset();
     let nextLetterFunction = this.nextLetter(size);
 
     let cards: Card[][] = [];
@@ -66,6 +69,7 @@ export class BoardService {
   private closeCardsAfterLimit() {
     if (this.openCards.length >= BoardService.MAX_OPEN_CARDS) {
       this.closeCards();
+      this.timingService.stopPeekTimer();
     }
   }
 
@@ -83,6 +87,9 @@ export class BoardService {
     if (areCardsEqual) {
       this.setCardsStatus(this.openCards, CardStatus.found);
       this.openCards = [];
+      this.foundCardPairsSrc.next(this.foundCardPairsSrc.value+1);
+    } else {
+      this.timingService.startPeekTimer(() => this.closeCards());
     }
   }
 

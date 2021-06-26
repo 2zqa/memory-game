@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {BoardModule} from "./board/board.module";
 import {SidebarModule} from "./sidebar/sidebar.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {HeaderModule} from "./header/header.module";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         BrowserModule,
         BoardModule,
         SidebarModule,
-        NgbModule
+        NgbModule,
+        HeaderModule
     ],
   providers: [],
   bootstrap: [AppComponent]

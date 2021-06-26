@@ -22,10 +22,7 @@ export class CardComponent {
   constructor(private boardService: BoardService, public colorService: CardColorService) {
     this.boardService.char.subscribe(char => this.inactiveCardChar = char);
     this.colorService.activeColor.subscribe(activeColor => this.activeColor = activeColor);
-    this.colorService.inactiveColor.subscribe(inactiveColor => {
-      this.inactiveColor = inactiveColor;
-      console.log("inactivecolor is nu... "+inactiveColor);
-    });
+    this.colorService.inactiveColor.subscribe(inactiveColor => this.inactiveColor = inactiveColor);
     this.colorService.foundColor.subscribe(foundColor => this.foundColor = foundColor);
   }
 
