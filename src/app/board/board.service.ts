@@ -48,12 +48,7 @@ export class BoardService {
     }
   }
 
-  cardClicked(card: Card) {
-    // TODO: timing service
-    this.addOpenCard(card);
-  }
-
-  private addOpenCard(card: Card): void {
+  cardClicked(card: Card): void {
     // Check if card is already in list.
     if (this.openCards.includes(card) || card.status !== CardStatus.inactive) {
       return;
@@ -70,9 +65,13 @@ export class BoardService {
 
   private closeCardsAfterLimit() {
     if (this.openCards.length >= BoardService.MAX_OPEN_CARDS) {
-      this.setCardsStatus(this.openCards, CardStatus.inactive);
-      this.openCards = [];
+      this.closeCards();
     }
+  }
+
+  closeCards() {
+    this.setCardsStatus(this.openCards, CardStatus.inactive);
+    this.openCards = [];
   }
 
   /**
