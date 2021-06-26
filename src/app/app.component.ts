@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Memory';
-  version = '0.0.1-ALPHA'
 }
