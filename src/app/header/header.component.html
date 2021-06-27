@@ -1,4 +1,4 @@
-<p>Verlopen tijd: {{time}}<br/>
+<p>Verlopen tijd: {{elapsedTime}}<br/>
   Gevonden kaart-paren: {{foundCardPairs}}<br>
   Resterende toontijd:<br></p>
-  <ngb-progressbar [value]="progress" [animated]="timingService.PEEK_SECONDS !== progress" [striped]="true" [max]="timingService.PEEK_SECONDS"></ngb-progressbar>
+  <ngb-progressbar [value]="peekTimeRemaining" [animated]="timingService.PEEK_SECONDS !== peekTimeRemaining" [striped]="true" [max]="timingService.PEEK_SECONDS"></ngb-progressbar>
