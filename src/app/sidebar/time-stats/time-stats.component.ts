@@ -4,11 +4,11 @@ import {Highscore} from "../../highscore";
 import {TimingService} from "../../timing.service";
 
 @Component({
-  selector: 'app-highscores',
-  templateUrl: './highscores.component.html',
-  styleUrls: ['./highscores.component.css']
+  selector: 'app-timestats',
+  templateUrl: './time-stats.component.html',
+  styleUrls: ['./time-stats.component.css']
 })
-export class HighscoresComponent {
+export class TimeStatsComponent {
   highscores: Highscore[] = [];
   avgTime = 0;
   elapsedTime = 0;
