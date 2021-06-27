@@ -11,7 +11,7 @@ import {CardColorService} from "../../card-color.service";
 export class GameSettingsComponent {
   readonly chars = ['*', '#', '@', '&', '%', 'X', '?¿'];
   readonly defaultChar = this.chars[0];
-  readonly sizes = [2, 4, 6];
+  sizes = [1, 2, 3].map((x) => x * BoardService.MAX_OPEN_CARDS);
   defaultSize = this.sizes[1];
   ctrlColors = this.colorService.ctrlColors;
 
