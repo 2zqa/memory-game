@@ -12,7 +12,7 @@ export class GameSettingsComponent {
   readonly chars = ['*', '#', '@', '&', '%', 'X', '?¿'];
   readonly defaultChar = this.chars[0];
   sizes = [1, 2, 3].map((x) => x * BoardService.MAX_OPEN_CARDS);
-  defaultSize = this.sizes[1];
+  defaultSize = this.sizes[2];
   ctrlColors = this.colorService.ctrlColors;
 
   constructor(private boardService: BoardService, public colorService: CardColorService) { }

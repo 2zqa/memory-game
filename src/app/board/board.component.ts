@@ -15,6 +15,6 @@ export class BoardComponent {
 
   constructor(public boardService: BoardService, private timingService: TimingService) {
     this.boardService.cards.subscribe(cards=>this.cards=cards);
-    boardService.newGame(4);
+    boardService.newGame(6); //TODO: Retrieve from boardService, because sizes are dependant on amount of open cards
   }
 }
