@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {HighscoreService} from "../../highscore.service";
 import {Highscore} from "../../highscore";
 import {TimingService} from "../../timing.service";

@@ -1,7 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Card} from "../card";
+import {Component, Input} from '@angular/core';
+import {Card, CardStatus} from "../card";
 import {BoardService} from "../board.service";
-import { CardStatus } from "../card";
 import {CardColorService} from "../../card-color.service";
 
 @Component({

@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TimeStatsComponent } from './time-stats/time-stats.component';
-import { SidebarComponent } from './sidebar.component';
-import { GameSettingsComponent } from './game-settings/game-settings.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {TimeStatsComponent} from './time-stats/time-stats.component';
+import {SidebarComponent} from './sidebar.component';
+import {GameSettingsComponent} from './game-settings/game-settings.component';
 import {FormsModule} from "@angular/forms";
-import { FormatTimePipe } from './game-settings/format-delta.pipe';
-
+import {FormatTimePipe} from './game-settings/format-delta.pipe';
 
 
 @NgModule({
@@ -18,9 +17,10 @@ import { FormatTimePipe } from './game-settings/format-delta.pipe';
   exports: [
     SidebarComponent
   ],
-    imports: [
-        CommonModule,
-        FormsModule
-    ]
+  imports: [
+    CommonModule,
+    FormsModule
+  ]
 })
-export class SidebarModule { }
+export class SidebarModule {
+}

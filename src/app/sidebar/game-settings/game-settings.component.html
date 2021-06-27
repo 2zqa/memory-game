@@ -10,7 +10,8 @@
   <br>
   <div *ngFor="let ctrl of ctrlColors; index as i">
     <p>{{ctrl.control}}:</p>
-    <input type="color" [(ngModel)]="ctrl.color" (change)="colorService.changeColor(ctrl.control, ctrl.color)" name="color_{{i}}"/>
+    <input type="color" [(ngModel)]="ctrl.color" (change)="colorService.changeColor(ctrl.control, ctrl.color)"
+           name="color_{{i}}"/>
     <p>({{ctrl.color}})</p>
   </div>
 </ng-container>

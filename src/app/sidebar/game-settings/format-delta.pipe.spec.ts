@@ -1,4 +1,4 @@
-import { FormatTimePipe } from './format-delta.pipe';
+import {FormatTimePipe} from './format-delta.pipe';
 
 describe('FormatDeltaPipe', () => {
   it('create an instance', () => {

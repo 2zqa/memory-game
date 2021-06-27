@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {BoardService} from "../../board/board.service";
 import {NgForm} from "@angular/forms";
 import {CardColorService} from "../../card-color.service";
@@ -15,7 +15,8 @@ export class GameSettingsComponent {
   defaultSize = this.sizes[2];
   ctrlColors = this.colorService.ctrlColors;
 
-  constructor(private boardService: BoardService, public colorService: CardColorService) { }
+  constructor(private boardService: BoardService, public colorService: CardColorService) {
+  }
 
   setChar(value: string): void {
     this.boardService.updateChar(value);

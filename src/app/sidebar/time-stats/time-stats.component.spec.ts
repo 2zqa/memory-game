@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TimeStatsComponent } from './time-stats.component';
+import {TimeStatsComponent} from './time-stats.component';
 
 describe('HighscoresComponent', () => {
   let component: TimeStatsComponent;
@@ -8,9 +8,9 @@ describe('HighscoresComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TimeStatsComponent ]
+      declarations: [TimeStatsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

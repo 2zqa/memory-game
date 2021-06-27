@@ -13,5 +13,6 @@ export class Card {
 
   public status: CardStatus.inactive | CardStatus.active | CardStatus.found = CardStatus.inactive;
 
-  constructor(public letter: string) {}
+  constructor(public letter: string) {
+  }
 }

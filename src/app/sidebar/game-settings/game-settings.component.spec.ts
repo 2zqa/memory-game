@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GameSettingsComponent } from './game-settings.component';
+import {GameSettingsComponent} from './game-settings.component';
 
 describe('GameSettingsComponent', () => {
   let component: GameSettingsComponent;
@@ -8,9 +8,9 @@ describe('GameSettingsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GameSettingsComponent ]
+      declarations: [GameSettingsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

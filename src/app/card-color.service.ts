@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {CardColor} from "./sidebar/game-settings/cardColor";
 import {CardStatus} from "./board/card";
 import {BehaviorSubject} from "rxjs";
@@ -9,9 +9,9 @@ import {BehaviorSubject} from "rxjs";
 export class CardColorService {
 
   ctrlColors: CardColor[] = [
-    { control: CardStatus.inactive, color: "#FF0000" },
-    { control: CardStatus.active, color: "#008C00" },
-    { control: CardStatus.found, color: "#800080" }
+    {control: CardStatus.inactive, color: "#FF0000"},
+    {control: CardStatus.active, color: "#008C00"},
+    {control: CardStatus.found, color: "#800080"}
   ];
 
   private activeColorSrc = new BehaviorSubject<string>(this.ctrlColors[1].color)
@@ -22,7 +22,7 @@ export class CardColorService {
   foundColor = this.foundColorSrc.asObservable();
 
   changeColor(status: CardStatus, color: string): void {
-    switch(status) {
+    switch (status) {
       case CardStatus.inactive:
         this.inactiveColorSrc.next(color);
         break;
@@ -36,5 +36,6 @@ export class CardColorService {
 
   }
 
-  constructor() { }
+  constructor() {
+  }
 }

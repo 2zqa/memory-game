@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {Highscore} from "./highscore";
 
@@ -9,13 +9,13 @@ export class HighscoreService {
 
   static readonly TOPSCORES_COUNT = 5;
   private highscoresSrc = new BehaviorSubject<Highscore[]>([
-    { name: "Barack Obama", time: 200 },
-    { name: "Bernie Sanders", time: 300 },
-    { name: "Hillary Clinton", time: 400 },
-    { name: "Jeb Bush", time: 500 },
-    { name: "Donald Trump", time: 600 }
+    {name: "Barack Obama", time: 200},
+    {name: "Bernie Sanders", time: 300},
+    {name: "Hillary Clinton", time: 400},
+    {name: "Jeb Bush", time: 500},
+    {name: "Donald Trump", time: 600}
   ]);
-  highscores = this. highscoresSrc.asObservable();
+  highscores = this.highscoresSrc.asObservable();
 
   private averageTimeSrc = new BehaviorSubject<number>(-1);
   averageTime = this.averageTimeSrc.asObservable();
@@ -34,8 +34,8 @@ export class HighscoreService {
 
     let sepLen = separator.length,
       charsToShow = strLen - sepLen,
-      frontChars = Math.ceil(charsToShow/2),
-      backChars = Math.floor(charsToShow/2);
+      frontChars = Math.ceil(charsToShow / 2),
+      backChars = Math.floor(charsToShow / 2);
 
     return fullStr.substr(0, frontChars) +
       separator +
@@ -47,12 +47,12 @@ export class HighscoreService {
     this.updateAverage();
 
     let highscores = this.highscoresSrc.value;
-    if(highscores.length < HighscoreService.TOPSCORES_COUNT || time < highscores[HighscoreService.TOPSCORES_COUNT-1].time) {
+    if (highscores.length < HighscoreService.TOPSCORES_COUNT || time < highscores[HighscoreService.TOPSCORES_COUNT - 1].time) {
       let name = HighscoreService.truncate(prompt(`Congratulations, you won! Your time: ${time} seconds\nEnter your name:`), 20, "…");
-      if(name === null || name === "") {
+      if (name === null || name === "") {
         name = "Anonymous";
       }
-      highscores.push({ name: name, time: time});
+      highscores.push({name: name, time: time});
       highscores.sort((entry1, entry2) => entry1.time - entry2.time);
       highscores = highscores.slice(0, HighscoreService.TOPSCORES_COUNT);
       this.highscoresSrc.next(highscores);
@@ -63,9 +63,9 @@ export class HighscoreService {
 
   private updateAverage(): void {
     let sum = 0;
-    for(let time of this.times) {
+    for (let time of this.times) {
       sum += time;
     }
-    this.averageTimeSrc.next(sum/this.times.length);
+    this.averageTimeSrc.next(sum / this.times.length);
   }
 }
